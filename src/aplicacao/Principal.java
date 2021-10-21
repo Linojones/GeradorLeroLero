@@ -1,18 +1,16 @@
 package aplicacao;
 
-import dados.FraseDois;
-import dados.FraseUm;
-import modelo.Gerador;
+import dados.Frase;
 
 public class Principal {
 
-	public static void main(String[] args) {
-		
-		Gerador gerador = new Gerador();
-		
-		System.out.println("Frase gerada:");
-		System.out.print(gerador.gerarFrase());
+    public static void main(String[] args) {
 
-	}
+        Frase gerador = new Frase();
+
+        System.out.println("Frase gerada:");
+        System.out.println(gerador.montarFrase());
+
+    }
 
 }
