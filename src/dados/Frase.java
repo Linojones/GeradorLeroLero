@@ -174,23 +174,21 @@ public class Frase {
             "nas ações de valor agregado."
     };
 
-    private int getRamdom(String[] n) {
+    private int getRandom(String[] n) {
         return (int) (Math.random() * (n.length - 1));
     }
 
     private String getParte(String[] s) {
-        return s[getRamdom(s)];
+        return s[getRandom(s)];
     }
 
     public String montarFrase() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getParte(parteUm));
-        sb.append(" ");
-        sb.append(getParte(parteDois));
-        sb.append(" ");
-        sb.append(getParte(parteTres));
-        sb.append(" ");
-        sb.append(getParte(parteQuatro));
-        return sb.toString();
+        return getParte(parteUm) +
+                " " +
+                getParte(parteDois) +
+                " " +
+                getParte(parteTres) +
+                " " +
+                getParte(parteQuatro);
     }
 }
