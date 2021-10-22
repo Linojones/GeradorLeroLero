@@ -1,5 +1,7 @@
 package dados;
 
+import java.util.Arrays;
+
 public class Frase {
 
     private final String[] parteUm = {
@@ -172,35 +174,23 @@ public class Frase {
             "nas a��es de valor agregado."
     };
 
-    private String getParteUm(int n) {
-        return parteUm[n];
-    }
-
-    private String getParteDois(int n) {
-        return parteDois[n];
-    }
-
-    private String getParteTres(int n) {
-        return parteTres[n];
-    }
-
-    private String getParteQuatro(int n) {
-        return parteQuatro[n];
-    }
-
     private int getRamdom(String[] n) {
         return (int) (Math.random() * (n.length - 1));
     }
 
+    private String getParte(String[] s){
+        return s[getRamdom(s)];
+    }
+
     public String montarFrase() {
         StringBuilder sb = new StringBuilder();
-        sb.append(getParteUm(getRamdom(parteUm)));
+        sb.append(getParte(parteUm));
         sb.append(" ");
-        sb.append(getParteDois(getRamdom(parteDois)));
+        sb.append(getParte(parteDois));
         sb.append(" ");
-        sb.append(getParteTres(getRamdom(parteTres)));
+        sb.append(getParte(parteTres));
         sb.append(" ");
-        sb.append(getParteQuatro(getRamdom(parteQuatro)));
+        sb.append(getParte(parteQuatro));
         return sb.toString();
     }
 }
